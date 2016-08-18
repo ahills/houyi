@@ -1,0 +1,23 @@
+Usage: houyi [-h] OP
+
+Operators:
+ +   Increase brightness one step
+ ++  Set brightness to maximum
+ -   Decrease brightness one step
+ --  Set brightness to minimum non-zero (1)
+ -.  Set brightness to one step above zero
+ 0   Set brightness to zero
+
+Any other value will set the brightness directly.
+
+Providing no operator will display the current and maximum brightness.
+
+The backlight to modify can be set via the BACKLIGHT environment variable. If
+unset, the BACKLIGHT_BASE directory (default: /sys/class/backlight) will be
+searched for directories containing 'brightness' and 'max_brightness' files.
+
+Step size is the maximum brightness divided by BACKLIGHT_STEPS (default: 10).
+
+Configuration is read by sourcing /etc/conf.d/houyi and /etc/houyi, in that
+order, if the files exist.
+
